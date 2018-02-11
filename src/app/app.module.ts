@@ -4,15 +4,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AlertModule } from 'ngx-bootstrap';
-import { SlBoardComponent } from './sl-board/sl-board.component';
+import { BoardModule } from './board/board.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SlBoardComponent
   ],
   imports: [
     BrowserModule,
+    BoardModule,
     AlertModule.forRoot()
   ],
   providers: [],
