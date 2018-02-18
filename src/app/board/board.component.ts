@@ -1,29 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'sl-board',
-  template: `
-<div class="container-fluid">
-  <div class="row" >
-    <div [class]="">
-    </div>
-  </div>
-</div>
-  `,
-  styleUrls: ['./board.component.css']
+  templateUrl: './board.component.html',
+  styleUrls: [
+    './board.component.css'
+  ]
 })
 export class BoardComponent implements OnInit {
 
-  get Columns(): string[] {
-    return [
-      'col1',
-      'col2'
-    ];
-  }
-
   constructor() { }
 
-  ngOnInit() {
+  get Columns(): string[] {
+    return this._columns;
   }
+
+  @Output()
+  get ClassName() {
+    return `col-xs-${ Math.floor(12 / this._columns.length) }`;
+  }
+
+  ngOnInit() {
+    this._columns = [
+      'col1',
+      'col2',
+      'col3',
+      'col4',
+      'col5',
+    ];
+  }
+  private _columns: string[];
 
 }
