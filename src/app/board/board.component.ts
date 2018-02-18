@@ -1,4 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
+import { BoardUpdateService } from './board-update.service';
 
 @Component({
   selector: 'sl-board',
@@ -9,7 +10,7 @@ import { Component, OnInit, Output } from '@angular/core';
 })
 export class BoardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _boardUpdateService: BoardUpdateService) { }
 
   get Columns(): string[] {
     return this._columns;
@@ -21,13 +22,7 @@ export class BoardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._columns = [
-      'col1',
-      'col2',
-      'col3',
-      'col4',
-      'col5',
-    ];
+    this._columns = this._boardUpdateService.getColumnHeaders();
   }
   private _columns: string[];
 
