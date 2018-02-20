@@ -5,18 +5,22 @@ export class BoardUpdateService {
 
   constructor() { }
 
+  getCardsForColumn(columnHeader: string) {
+    return [
+      'bug 1',
+      'Pbi 2',
+      'Pbi 2',
+      'Pbi 2',
+      'Pbi 2',
+    ];
+  }
+
   getColumnHeaders() {
     return [
-      'col1',
-      'col2',
-      'col3',
-      'col4',
-      'col5',
-      'col1',
-      'col2',
-      'col3',
-      'col4',
-      'col5',
+      'To do',
+      'In progress',
+      'Testing',
+      'Done'
     ];
   }
 

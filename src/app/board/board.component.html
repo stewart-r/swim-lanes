@@ -1,7 +1,9 @@
 <div class="container-fluid">
-    <div class="row">
-        <div *ngFor="let col of Columns" [class]="ClassName">
-            {{col}}
+    <div class="sl-row">
+        <div *ngFor="let col of Columns" [style.width.%]="CalculatedWidth" class="sl-col">
+            <div class="sl-col-contents">
+                    {{col}}
+            </div>
         </div>
     </div>
 </div>

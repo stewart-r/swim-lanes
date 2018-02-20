@@ -17,8 +17,8 @@ export class BoardComponent implements OnInit {
   }
 
   @Output()
-  get ClassName() {
-    return `col-xs-${ Math.floor(12 / this._columns.length) }`;
+  get CalculatedWidth() {
+    return 100.0 / this._columns.length;
   }
 
   ngOnInit() {
