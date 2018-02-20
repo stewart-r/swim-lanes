@@ -2,7 +2,7 @@
     <div class="sl-row">
         <div *ngFor="let col of Columns" [style.width.%]="CalculatedWidth" class="sl-col">
             <div class="sl-col-contents">
-                    {{col}}
+                    <sl-column [columnHeader] = col></sl-column>
             </div>
         </div>
     </div>

@@ -5,7 +5,7 @@ export class BoardUpdateService {
 
   constructor() { }
 
-  getCardsForColumn(columnHeader: string) {
+  getCardIdsForColumn(columnHeader: string) {
     return [
       'bug 1',
       'Pbi 2',
