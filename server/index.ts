@@ -1,22 +1,11 @@
-import * as express from 'express';
+import app from './app';
 
-class App {
-  public express;
+const port = process.env.PORT || 3000;
 
-  constructor () {
-    this.express = express();
-    this.mountRoutes();
+app.listen(port, (err) => {
+  if (err) {
+    return console.log(err);
   }
 
-  private mountRoutes (): void {
-    const router = express.Router();
-    router.get('/', (req, res) => {
-      res.json({
-        message: 'Hello World!'
-      });
-    });
-    this.express.use('/', router);
-  }
-}
-
-export default new App().express;
+  return console.log(`server is listening on ${port}`);
+});

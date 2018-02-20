@@ -4,7 +4,10 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "prestart":"echo 'run server'",
+    "build-server":"tsc -p ./server",
+    "prerun-server":"npm run build-server",
+    "run-server":"node ./dist-server/index.js",
+    "prestart":"npm run-server",
     "start": "ng serve",
     "build": "ng build --prod",
     "test": "ng test",
